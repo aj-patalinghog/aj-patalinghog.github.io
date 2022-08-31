@@ -1,7 +1,7 @@
 ---
 layout: project
 type: project
-image: img/learning-emporium.png
+image: img/learning-emporium/learning-emporium.png
 title: "Learning Emporium"
 date: 2021-01 to 2022-08
 published: true
@@ -13,7 +13,7 @@ labels:
 summary: "Teaching math for the Learning Emporium at UH Manoa."
 ---
 
-<img class="img-fluid" src="../img/learning-emporium-2.png">
+<img class="img-fluid" src="../img/learning-emporium/learning-emporium-2.png">
 
 ## What is the Learning Emporium?
 
