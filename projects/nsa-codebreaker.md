@@ -12,7 +12,7 @@ labels:
 summary: "Developing new technical skills through a series of realisitic missions."
 ---
 
-<img width="200px" class="rounded float-start pe-4" src="img/nsa-codebreaker/cybersecurity.png">
+<img class="img-fluid" src="../img/math-tutoring/learning-emporium-2.png">
 
 ## The NSA Codebreaker Challenge
 
