@@ -9,7 +9,7 @@ labels:
   - StackOverflow
 ---
 
-<img width="100px" class="rounded float-start pe-4" src="../img/asking-smart-questions/question.jpg">
+<img width="150px" class="rounded float-start pe-4" src="../img/asking-smart-questions/question.jpg">
 
 During my time as a computer engineering student, there were many times where I was frustrated with a problem or piece of code that wasn't working. As someone who used to hate asking questions, this meant hours of trial and error only to find that the problem could have been easily resolved had I talked to a friend or to my professors. Asking questions would have saved me many hours of wasted time which could have been spent doing other homework or activities.
 
@@ -20,7 +20,7 @@ In my ICS 314 class, we learned how to ask smart questions through an essay by E
 
 A great example which follows these four guidelines can be found in the StackOverflow post ["How should I do floating point comparison?"](https://stackoverflow.com/questions/4915462/how-should-i-do-floating-point-comparison). The title is concise but descriptive enough to show what they need help with. They then give an overview of their program and the parts where they need help. The user also demonstrated that they already did some research on floating point arithmetic which can be seen in the code below. 
 
-```vb
+```c#
 double a = 1.0 / 3.0;
 double b = a + a + a;
 if ((3 * a) != b)
