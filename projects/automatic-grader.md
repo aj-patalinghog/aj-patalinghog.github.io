@@ -12,14 +12,31 @@ labels:
 summary: "A program which automatically inputs grades to Google Classroom."
 ---
 
-<img class="img-fluid" src="../img/math-tutoring/learning-emporium-2.png">
-
 ## Background 
 
-During the Fall 2022 semester, I worked as one of the Teaching Assistants for EE 160 - Programming for Engineers. Each of us were in charge of teaching different lab sections where students learned Python through an online [zyBooks](https://www.zybooks.com/catalog/programming-in-python-3/) course. As teaching Asisstants, we also had to input the grades of zyBook assignments into Google Classroom. This was a very tedious and painful process considering that there were almost 100 students in the class. One of the other Teaching Assistants then introduced me to the Google Apps Script service which would allow us to automate inputting grades. When I learned it was using JavaScript, I decided to apply what I had been learning in my ICS 314 class for the last month.
+During the Fall 2022 semester, I worked as one of the Teaching Assistants for EE 160 - Programming for Engineers. Each of us were in charge of teaching a lab section where students learned Python through an online [zyBooks](https://www.zybooks.com/catalog/programming-in-python-3/) course. As Teaching Assistants, we also had to input the grades of zyBook assignments into Google Classroom. This was a very tedious and painful process considering that there were almost 100 students in the class. One of the other Teaching Assistants then introduced me to the Google Apps Script service which would allow us to automate inputting grades. When I learned it used JavaScript, I decided to utilize what I had been learning for the past few weeks in my ICS 314 class.
 
 
 ## What I Learned
 
-I worked as a math tutor at the Learning Emporium from January 2021 until August 2022 and tutored courses ranging from Trigonometry to Calculus IV. Through this opportunity, I was able to interact with other college students who come from various different backgrounds. Oftentimes, teaching a math concept one way would work for one student but not another. This forced me to re-examine the material and to really understand it in order to explain concepts in multiple different ways. Teaching a variety of students allowed me to learn different teaching strategies and to develop my communication skills. 
+Since zyBooks created assignment reports which were CSV files, I was able to upload them into a spreadsheet. However, I did not know how to take the grades from the spreadsheet and transfer them into Google Classroom. This let me to research into the different Application Programming Interfaces (APIs) of Google and how to use them in Google Apps Script. The two which I ended up using were the Google Sheets API, as well as the Google Classroom API. Writing the script also reinforced my understanding of concepts being taught in ICS 314 such as functional programming, which was often used to access and modify data with either of the two APIs. The function below demonstrates an example of how I used the Google Sheets API, in addition to using functional programming with the built-in array methods of JavaScript.
 
+```javascript
+function getSpreadsheetGrades(SPREADSHEET_URL, SHEET_NAME) {
+
+  const SPREADSHEET_ID = getSpreadsheetID(SPREADSHEET_URL)
+  const spreadsheet = SpreadsheetApp.openById(SPREADSHEET_ID);
+  const sheet = spreadsheet.getSheetByName(SHEET_NAME);
+  const data = sheet.getRange(1, 1, sheet.getLastRow(), sheet.getLastColumn()).getValues();
+
+  const EMAIL = data[0].findIndex(col => col.includes('School email'));
+  const POINTS = data[0].findIndex(col => col.includes('Points earned'));
+
+  const GRADES = data.map(entry => [entry[EMAIL], entry[POINTS]]);
+  GRADES.shift();
+
+  return GRADES;
+}
+```
+
+Source: [EE 160 Grading Script](https://script.google.com/d/1AvZ8lDavanu9NaFii6yyoyNH4mckSeCE12NVNav8phw69AmsxB9DtNGD/edit?usp=sharing)
