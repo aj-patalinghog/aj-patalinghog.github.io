@@ -57,18 +57,6 @@
   ],
   "work": [
     {
-      "company": "UH Manoa College of Natural Sciences ",
-      "position": "Learning Emporium Math Tutor",
-      "website": "https://natsci.manoa.hawaii.edu/learningemporium/",
-      "startDate": "2021-01-10",
-      "endDate": "2022-08-12",
-      "summary": "Teaching college level math concepts",
-      "highlights": [
-        "Instruct, guide and assist students with mathematical concepts ranging from Trigonometry to Calculus IV",
-        "Assessing students needs and learning style to provide effective guidance"
-      ]
-    },
-    {
       "company": "UH Manoa Department of Electrical and Computer Engineering",
       "position": "Teaching Assistant",
       "website": "",
@@ -78,6 +66,18 @@
       "highlights": [
         "Preparing, teaching, and demonstrating labs to reinforce students understanding of course material",
         "Communicating with supervising professor on students progress, grading, and class schedule"
+      ]
+    },
+    {
+      "company": "UH Manoa College of Natural Sciences ",
+      "position": "Learning Emporium Math Tutor",
+      "website": "https://natsci.manoa.hawaii.edu/learningemporium/",
+      "startDate": "2021-01-10",
+      "endDate": "2022-08-12",
+      "summary": "Teaching college level math concepts",
+      "highlights": [
+        "Instruct, guide and assist students with mathematical concepts ranging from Trigonometry to Calculus IV",
+        "Assessing students needs and learning style to provide effective guidance"
       ]
     }
   ],
