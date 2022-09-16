@@ -3,7 +3,7 @@ layout: project
 type: project
 image: img/nsa-codebreaker/NSA.png
 title: "NSA Codebreaker Challenge 2021"
-date: 2021-08
+date: 2021
 published: true
 labels:
   - Cybersecurity

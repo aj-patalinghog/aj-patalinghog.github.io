@@ -3,7 +3,7 @@ layout: project
 type: project
 image: img/automatic-grader/Google-Classroom.png
 title: "Automatic Grader"
-date: 2022-09
+date: 2022
 published: true
 labels:
   - JavaScript

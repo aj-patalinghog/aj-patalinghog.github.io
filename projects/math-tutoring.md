@@ -3,7 +3,7 @@ layout: project
 type: project
 image: img/math-tutoring/learning-emporium.png
 title: "Math Tutoring"
-date: 2021-01
+date: 2021
 published: true
 labels:
   - Math
