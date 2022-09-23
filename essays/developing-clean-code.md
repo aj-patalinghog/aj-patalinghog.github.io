@@ -17,11 +17,8 @@ In this past week, we have been learning how to use IntelliJ Idea as well as get
 
 On the other hand, I have not had that much trouble with implementing the ESLint coding standards. The coding standard we are currently using in the ICS 314 class is similar to the formatting I have used since I started learning programming. Examples of how I structured my code before and after learning about the ESLint coding standards can be seen below. However, there was something slightly different which was putting spaces in between conditional statements and loops. Another helpful aspect was the recommendations on when to use let or const to declare a variable. Overall, I definitely think that ESLint has been helpful as it points out any errors in my code and it has also made my code easier to read.
 
-<table>
-<tr>
-<td>
-
 ```js
+// Before Using ESLint
 function BertErnie() {
 	for(let i = 1; i <= 100; i++) {
 		if(i % 4 === 0 && i % 6 === 0) {
@@ -37,10 +34,8 @@ function BertErnie() {
 }
 ```
 
-</td>
-<td>
-
 ```js
+// After Using ESLint
 function zipList(arr1, arr2) {
   const returnArray = [];
   for (let i = 0; i < arr1.length; i++) {
@@ -54,14 +49,6 @@ function zipListTheSimpleWay(arr1, arr2) {
   return _.flatten(_.zip(arr1, arr2));
 }
 ```
-
-</td>
-</tr>
-<tr>
-<th> Before Using ESLint </th>
-<th> AfterUsing ESLint </th>
-</tr>
-</table>
 
 ## Future
 I think that programming with a coding standard is a skill that needs to be developed similar to any other skill. Although ESLint is not that different from what I have been using, I continue making some errors such as determining when to use const or let to define a variable. In the future, I will definitely continue to practice coding with coding standards like ESLint in order to produce code that is easily understandable for myself and others too. Using coding standards is like learning a new language and I hope that in the future, I hope that it will come to me natural
