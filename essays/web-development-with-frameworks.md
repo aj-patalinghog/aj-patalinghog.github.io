@@ -19,18 +19,18 @@ UI frameworks are software tools that are used to build web programs in a more e
 Learning to use a framework can be just as difficult as learning a new programming language, so why should we learn it? Is it also worth the time and effort put in? After a week with Bootstrap 5 and struggling to design several website homepages like the one seen below, I think that there are several reasons why it was a great time investment and is important to learn.
 
 <div class="text-center">
-<img width=800px class="justify-content-center" src="../img/web-development-with-frameworks/murphys.png" alt="Murphy's Homepage">
+<img width=800px src="../img/web-development-with-frameworks/murphys.png" alt="Murphy's Homepage">
 </div>
 
-## Reasons to Use a UI Framework 
-<img width=300px src="../img/web-development-with-frameworks/template.png" alt="Bootstrap logo">
+## Reasons to Use a UI Framework
+<img width=300px class="rounded float-end ps-4" src="../img/web-development-with-frameworks/template.png" alt="Bootstrap logo">
 <ul>
 <li>
 Similar to coding standards in that it is great for a team environment. When developing a web application in this sort of setting, it is easier to understand code when everyone in the team uses the same set of tools. For example, when looking at a friend's code, I could immediately see any problems and try to help them since our code was similar in design.
 </li>
 
 <li>
-Simple, repetitive designs are much easier to implement with the built in methods of a framework. Repetitive tasks like creating tables and navigation bars are much easier with Bootstrap when compared to pure HTML and CSS. For example, most of our WODs are to recreate a website homepage which consists of a navigation bar, a background image, and a footer. After learning about Bootstrap 5, most websites we did had similar templates to the one seen on the right.
+Simple, repetitive designs are much easier to implement with the built in methods of a framework. Repetitive tasks like creating tables and navigation bars are much easier with Bootstrap when compared to pure HTML and CSS. For example, most of our WODs were recreating a website homepage which consists of a navigation bar, a background image, and a footer. After learning about Bootstrap 5, most websites we did had similar templates to the one seen on the right.
 </li>
 
 <li>
