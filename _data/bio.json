@@ -25,7 +25,7 @@
     },
     {
       "name": "Toolsets/OS",
-      "keywords": [ "MacOS", "Linux", "Git/GitHub" ]
+      "keywords": [ "MacOS", "Linux", "Git/GitHub", "IntelliJ Idea" ]
     }
   ],
   "education": [
@@ -39,7 +39,9 @@
         "EE 205 - Object Oriented Programming",
         "EE 211/213 - Basic Circuit Analysis I/II",
         "EE 260 - Introduction to Digital Design",
-        "EE 367 - Data Structures and Algorithms"
+        "EE 361 - Digital Systems & Computer Design",
+        "EE 367 - Data Structures and Algorithms",
+        "ICS 314 - Software Engineering I"
       ]
     },
     {
