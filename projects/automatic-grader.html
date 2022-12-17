@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="title" content="Automatic Grader | AJ Patalinghog | Professional Portfolio">
+    <meta name="description" content="">
+    <meta name="image" content="https://github.com/aj-patalinghog.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="AJ Patalinghog | Professional Portfolio">
+    <meta property="og:url" content="https://aj-patalinghog.github.io/projects/automatic-grader.html">
+    <meta property="og:title" content="Automatic Grader | AJ Patalinghog | Professional Portfolio">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://github.com/aj-patalinghog.png">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/techfolio-theme/default.css">
+    <link rel="stylesheet" type="text/css" href="/css/rouge/github.css">
+    <!-- Load MathJax if 'mathjax: true' is found in your _config.yml. -->
+    
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+
+    <title>Automatic Grader | AJ Patalinghog | Professional Portfolio</title>
+  </head>
+  <body>
+  <header class="navbar navbar-expand navbar-light bg-light bg-gradient border-bottom">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">AJ Patalinghog</a>
+    <div class="ms-auto">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <a class="nav-link" href="/#projects">Projects</a>
+        <a class="nav-link" href="/#essays">Essays</a>
+        <a class="nav-link" href="/resume.html">Resume</a>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<div class="container py-4">
+  <h1 class="display-4">Automatic Grader</h1>
+ <h2 id="background">Background</h2>
+<p><img width="250px" class="img-thumbnail" src="../img/automatic-grader/GAS.png" style="float:right;" />
+During the Fall 2022 semester, I worked as one of the Teaching Assistants for EE 160 - Programming for Engineers. Each of us were in charge of teaching a lab section where students learned Python through an online <a href="https://www.zybooks.com/catalog/programming-in-python-3/">zyBooks</a> course. As Teaching Assistants, we also had to input the grades of zyBook assignments into Google Classroom. This was a very tedious and painful process considering that there were almost 100 students in the class. One of the other Teaching Assistants then introduced me to the Google Apps Script service which would allow us to automate inputting grades. When I learned it used JavaScript, I decided to utilize what I had been learning for the past few weeks in my ICS 314 class.</p>
+
+<h2 id="what-i-learned">What I Learned</h2>
+<p><img width="250px" class="rounded float-start pe-4" src="../img/automatic-grader/zyBooks.png" />
+Since zyBooks created assignment reports which were CSV files, I was able to upload them into a spreadsheet. However, I did not know how to take the grades from the spreadsheet and transfer them into Google Classroom. This let me to research into the different Application Programming Interfaces (APIs) of Google and how to use them in Google Apps Script. The two which I ended up using were the Google Sheets API, as well as the Google Classroom API. Writing the script also reinforced my understanding of concepts being taught in ICS 314 such as functional programming, which was often used to access and modify data with either of the two APIs. The function below demonstrates an example of how I used the Google Classroom API, in addition to using functional programming with the built-in array methods of JavaScript.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">getAssignmentID</span><span class="p">(</span><span class="nx">COURSE_ID</span><span class="p">,</span> <span class="nx">ASSIGNMENT_NAME</span><span class="p">)</span> <span class="p">{</span>
+
+  <span class="kd">const</span> <span class="nx">assignments</span> <span class="o">=</span> <span class="nx">Classroom</span><span class="p">.</span><span class="nx">Courses</span><span class="p">.</span><span class="nx">CourseWork</span><span class="p">.</span><span class="nx">list</span><span class="p">(</span><span class="nx">COURSE_ID</span><span class="p">).</span><span class="nx">courseWork</span><span class="p">;</span>
+
+  <span class="kd">const</span> <span class="nx">assignmentItem</span> <span class="o">=</span> <span class="nx">assignments</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">assignment</span> <span class="o">=&gt;</span> <span class="nx">assignment</span><span class="p">.</span><span class="nx">title</span> <span class="o">===</span> <span class="nx">ASSIGNMENT_NAME</span><span class="p">);</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="nx">assignmentItem</span> <span class="o">!==</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">assignmentItem</span><span class="p">.</span><span class="nx">id</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Did not find the Assignment '</span><span class="p">${</span><span class="nx">ASSIGNMENT_NAME</span><span class="p">}</span><span class="s2">'`</span><span class="p">);</span>
+  <span class="p">}</span>
+
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>Source: <a href="https://script.google.com/d/1AvZ8lDavanu9NaFii6yyoyNH4mckSeCE12NVNav8phw69AmsxB9DtNGD/edit?usp=sharing">EE 160 Grading Script</a></p>
+
+</div>
+
+<footer class="navbar navbar-expand navbar-light bg-light bg-gradient border-top">
+  <div class="container-fluid">
+    <div class="ms-auto">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <small><a class="nav-link" href="https://techfolios.github.io">Made with Techfolios</a></small>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  </body>
+</html>

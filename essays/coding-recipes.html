@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="title" content="Coding Recipes | AJ Patalinghog | Professional Portfolio">
+    <meta name="description" content="">
+    <meta name="image" content="https://github.com/aj-patalinghog.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="AJ Patalinghog | Professional Portfolio">
+    <meta property="og:url" content="https://aj-patalinghog.github.io/essays/coding-recipes.html">
+    <meta property="og:title" content="Coding Recipes | AJ Patalinghog | Professional Portfolio">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://github.com/aj-patalinghog.png">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/techfolio-theme/default.css">
+    <link rel="stylesheet" type="text/css" href="/css/rouge/github.css">
+    <!-- Load MathJax if 'mathjax: true' is found in your _config.yml. -->
+    
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+
+    <title>Coding Recipes | AJ Patalinghog | Professional Portfolio</title>
+  </head>
+  <body>
+  <header class="navbar navbar-expand navbar-light bg-light bg-gradient border-bottom">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">AJ Patalinghog</a>
+    <div class="ms-auto">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <a class="nav-link" href="/#projects">Projects</a>
+        <a class="nav-link" href="/#essays">Essays</a>
+        <a class="nav-link" href="/resume.html">Resume</a>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<div class="container py-4">
+  <h1 class="display-4">Coding Recipes</h1>
+  <span class="date">01 Dec 2022</span>
+  <hr>
+  <p>When cooking food, there is no set way or recipe that is always the best. There are many different variations in ingredients, preparation methods, and cooking techniques that have a huge impact on the final result. In general, food is also subjective to each person’s taste and is up to them to determine what is good or not. This is really similar to the design patterns that we have been learning about in my ICS 314 class.</p>
+
+<h2 id="coding-recipes">Coding Recipes?</h2>
+
+<p>Design patterns are general solutions to common problems that are seen in programming. Much like in cooking, they are the various coding recipes which developers can pick and choose from. They not only guide us and give us a general structure to work with, but can also play a large role in how we code something. Just like in cooking, we also have to be able to determine what suits our needs the best, or else we end up risking bad results and wasted time. In the end, design patterns are suggestions and are not meant to restrict us to a certain method. This level of freedom is similarly found in cooking which enables them to be versatile and useful for any project.</p>
+
+<h2 id="my-dishes">My Dishes</h2>
+
+<p>For the past month, I have been working in a team for our final project, <a href="https://rainbow-notes.github.io">Rainbow Notes</a>. Although I didn’t realize it, there are many different design patterns which we have been using so far. The two patterns below are examples which I want to focus on.</p>
+
+<h3 id="publish-subscribe-design-pattern">Publish-Subscribe Design Pattern</h3>
+
+<p>In this pattern, there are two roles: publishers and subscribers. A quick summary is that publishers will send data out when an event or change in state happens and only those who are subscribed to that publication will be able to receive that data and use it. This was especially useful when dealing with the MongoDB collections in our project. Below is a sample of code from the Notes Collection which implements this design pattern.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Server side</span>
+<span class="c1">// Define a publication to publish all notes.</span>
+<span class="nx">Meteor</span><span class="p">.</span><span class="nx">publish</span><span class="p">(</span><span class="nx">Notes</span><span class="p">.</span><span class="nx">userPublicationName</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">Notes</span><span class="p">.</span><span class="nx">collection</span><span class="p">.</span><span class="nx">find</span><span class="p">());</span>
+
+<span class="c1">// Client side</span>
+<span class="c1">// Get access to Note documents.</span>
+<span class="kd">const</span> <span class="nx">subcription</span> <span class="o">=</span> <span class="nx">Meteor</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">Notes</span><span class="p">.</span><span class="nx">userPublicationName</span><span class="p">);</span>
+<span class="c1">// Get the Note documents</span>
+<span class="kd">const</span> <span class="nx">notes</span> <span class="o">=</span> <span class="nx">Notes</span><span class="p">.</span><span class="nx">collection</span><span class="p">.</span><span class="nx">find</span><span class="p">({}).</span><span class="nx">fetch</span><span class="p">();</span>
+</code></pre></div></div>
+
+<h3 id="singleton-design-pattern">Singleton Design Pattern</h3>
+
+<p>In this pattern, a “global variable” is created which can be accessed and managed from anywhere in the project. It was specifically used to create instances of the four collections which we have in our project. Each of the collections were exported to the rest of the project and were easily manipulated from the methods throughout the client side. Below is a sample of code from the Courses Collection which implements this design pattern.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**
+ * The CoursesCollection. It encapsulates state and variable values for courses.
+ */</span>
+<span class="kd">class</span> <span class="nx">CoursesCollection</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// The name of this collection.</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">CoursesCollection</span><span class="dl">'</span><span class="p">;</span>
+    <span class="c1">// Define the Mongo collection.</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">collection</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Mongo</span><span class="p">.</span><span class="nx">Collection</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
+    <span class="c1">// Define the structure of each document in the collection.</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">schema</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SimpleSchema</span><span class="p">({</span>
+      <span class="na">name</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span>
+      <span class="na">path</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span>
+    <span class="p">},</span> <span class="p">{</span> <span class="na">tracker</span><span class="p">:</span> <span class="nx">Tracker</span> <span class="p">});</span>
+    <span class="c1">// Attach the schema to the collection, so all attempts to insert a document are checked against schema.</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">collection</span><span class="p">.</span><span class="nx">attachSchema</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">schema</span><span class="p">);</span>
+    <span class="c1">// Define names for publications and subscriptions</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">userPublicationName</span> <span class="o">=</span> <span class="s2">`</span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="s2">.publication.user`</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">adminPublicationName</span> <span class="o">=</span> <span class="s2">`</span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="s2">.publication.admin`</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="cm">/**
+ * The singleton instance of the CoursesCollection.
+ * @type {CoursesCollection}
+ */</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">Courses</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CoursesCollection</span><span class="p">();</span>
+</code></pre></div></div>
+
+<h2 id="the-result">The Result</h2>
+
+<p>Design Patterns are wonderful tools which can make our lives as developers much easier. They provide an easy way to get started on a project so that we don’t have to start from scratch all the time. Rather than worrying about the structure of our code, we can instead focus that time on improving other aspects. Although I have been using them throughout my schooling, I didn’t realize what they were until this past week. I’m surprised to see how common they were and I will definitely be using them in the future as well.</p>
+
+</div>
+
+<footer class="navbar navbar-expand navbar-light bg-light bg-gradient border-top">
+  <div class="container-fluid">
+    <div class="ms-auto">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <small><a class="nav-link" href="https://techfolios.github.io">Made with Techfolios</a></small>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  </body>
+</html>

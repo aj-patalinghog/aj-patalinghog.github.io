@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="title" content="Learning to Ask Smart Questions | AJ Patalinghog | Professional Portfolio">
+    <meta name="description" content="">
+    <meta name="image" content="https://github.com/aj-patalinghog.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="AJ Patalinghog | Professional Portfolio">
+    <meta property="og:url" content="https://aj-patalinghog.github.io/essays/learning-to-ask-smart-questions.html">
+    <meta property="og:title" content="Learning to Ask Smart Questions | AJ Patalinghog | Professional Portfolio">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://github.com/aj-patalinghog.png">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/techfolio-theme/default.css">
+    <link rel="stylesheet" type="text/css" href="/css/rouge/github.css">
+    <!-- Load MathJax if 'mathjax: true' is found in your _config.yml. -->
+    
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+
+    <title>Learning to Ask Smart Questions | AJ Patalinghog | Professional Portfolio</title>
+  </head>
+  <body>
+  <header class="navbar navbar-expand navbar-light bg-light bg-gradient border-bottom">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">AJ Patalinghog</a>
+    <div class="ms-auto">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <a class="nav-link" href="/#projects">Projects</a>
+        <a class="nav-link" href="/#essays">Essays</a>
+        <a class="nav-link" href="/resume.html">Resume</a>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<div class="container py-4">
+  <h1 class="display-4">Learning to Ask Smart Questions</h1>
+  <span class="date">08 Sep 2022</span>
+  <hr>
+  <p><img width="175px" class="rounded float-start pe-4" src="../img/asking-smart-questions/question.jpg" /></p>
+
+<p>During my time as a computer engineering student, there were many times I was frustrated with a problem or piece of code that was not working. As someone who used to hate asking questions, this meant hours of trial and error only to find that my problems were easily resolvable had I talked to a friend or my professors. Asking questions would have saved me time and effort that could have been spent doing other homework or activities.</p>
+
+<p>Now that I am in my Junior year, I have finally learned that asking questions is a necessary part of the learning process. However, this doesn’t mean you should ask whatever comes to mind. Most of the time, questions like “where did you find that?” result in sarcastic responses like “did you read the textbook?” or that it was “in the lecture slides.” Being able to ask concise and intelligent questions is a crucial learning skill developed through much practice. The difference between good and bad questions can especially be seen on StackOverflow, an online community where programmers can ask and answer each other’s questions.</p>
+
+<h2 id="smart-way">Smart Way</h2>
+<p>In my ICS 314 class, we learned how to ask smart questions through an essay by Eric Raymond found <a href="http://www.catb.org/esr/faqs/smart-questions.html">here</a>. His essay can be summarized into the following four points. First, you should research your issue using various forums and online documents before asking a question online. This demonstrates that you have at least tried to fix your problem before asking for more help. Second, when posting to forums like StackOverflow, use a specific title and include the appropriate tags, or others will ignore you. Third, write in correct, grammatical language and be explicit about your questions. Finally, being courteous will go a long way, but it should never reach the point that you are begging for an answer.</p>
+
+<p>A great example that follows these four guidelines can be seen in the StackOverflow post <a href="https://stackoverflow.com/questions/4915462/how-should-i-do-floating-point-comparison">“How should I do floating point comparison?”</a>. The title is concise but descriptive enough to show where they need help. They then gave an overview of their program consisting of several if statements with comparisons between floating point numbers. The user also researched the unreliability of floating point arithmetic which can be seen in the code below.</p>
+
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">double</span> <span class="n">a</span> <span class="p">=</span> <span class="m">1.0</span> <span class="p">/</span> <span class="m">3.0</span><span class="p">;</span>
+<span class="kt">double</span> <span class="n">b</span> <span class="p">=</span> <span class="n">a</span> <span class="p">+</span> <span class="n">a</span> <span class="p">+</span> <span class="n">a</span><span class="p">;</span>
+<span class="k">if</span> <span class="p">((</span><span class="m">3</span> <span class="p">*</span> <span class="n">a</span><span class="p">)</span> <span class="p">!=</span> <span class="n">b</span><span class="p">)</span>
+  <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Oh no!"</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>This code will print out “Oh no!” even though it logically makes sense for 3 * a to be equal to b. It also shows that they were able to understand why floating point arithmetic is unreliable for their use cases and why they needed more help. Finally, they were explicit about what they wanted and their question “How can I reliably compare floating point numbers (less than, greater than, equality)?” was easily identifiable due to the bold font. By creating a descriptive post and asking an intelligent question, this person participated in a meaningful discussion and received several methods to solve their problem.</p>
+
+<h2 id="smart-way-1">!Smart Way</h2>
+<p>Another example centered on the same topic of floating point comparisons but asked in a bad way can be found in the StackOverflow post <a href="https://stackoverflow.com/questions/59642233/the-problem-is-from-a-algorithm-problem-i-do-recently-but-i-cant-gain-the-right">“the problem is from a algorithm problem I do recently,but I can’t gain the right answer”</a>.
+In addition to poor grammar, the title makes it unclear what topic this person needs help with. The description then begins with a small piece of code, seen below, with no context on how it was related to their program.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
+<span class="kt">float</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="o">/</span><span class="mi">12</span><span class="p">;</span>
+<span class="k">if</span> <span class="p">(</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span> <span class="o">/</span> <span class="n">k</span> <span class="o">==</span> <span class="n">a</span> <span class="p">)</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s">"%d"</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Only after analyzing the rest of their code did I see that their goal was to find combinations of two fractions that added up to the given input. This user then asked the simple question “what’s the reason?” after the output wasn’t what they expected. Furthermore, no proof that they researched their problem can be found either. In addition, this person also had an entirely unrelated paragraph of pleasantries that added nothing of material to their post. Finally, they ignored one of the most important practices of not posting code as pictures since this prevents other users from reproducing your work. By posting an unclear question and ignoring the smart question guidelines, this person warded off any potential help and did not receive the help they needed.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>As a programmer, there will be times when we need to seek help from other people. We can ask friends or teachers and look online at sources like StackOverflow. However, to get the help we need efficiently and effectively, we first need to be able to ask good questions. Properly describing our problems and needs saves time for both sides and might lead to better answers. In addition, asking smart questions can create thought-provoking discussions that will help those with similar questions in the future. Since everyone benefits from asking good questions, we should do our best to make all of our questions smart.</p>
+
+</div>
+
+<footer class="navbar navbar-expand navbar-light bg-light bg-gradient border-top">
+  <div class="container-fluid">
+    <div class="ms-auto">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <small><a class="nav-link" href="https://techfolios.github.io">Made with Techfolios</a></small>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  </body>
+</html>

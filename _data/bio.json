@@ -1,0 +1,105 @@
+{
+  "basics": {
+    "name": "AJ Patalinghog",
+    "label": "Student",
+    "picture": "https://github.com/aj-patalinghog.png",
+    "email": "ajpata@hawaii.edu",
+    "phone": "(808) 798-5930",
+    "website": "https://aj-patalinghog.github.io",
+    "summary": "I am currently studying for a B.S. in Computer Engineering at the University of Hawaii at Manoa. I expect to graduate in Fall, 2023.",
+    "location": { "address": "", "postalCode": "96819", "city": "Honolulu", "countryCode": "USA", "region": "Hawaii" },
+    "profiles": [
+      { "network": "github", "username": "aj-patalinghog", "url": "http://github.com/aj-patalinghog" }, 
+      { "network": "linkedin", "username": "AJ Patalinghog", "url": "http://linkedin.com/in/aj-patalinghog" }
+    ]
+  },
+  "interests": [
+    { "name": "Software Engineering" },
+    { "name": "Cybersecurity" },
+    { "name": "Computer Systems" }
+  ],
+  "skills": [
+    {
+      "name": "Languages and Frameworks",
+      "keywords": [ "C", "C++", "Java", "Javascript"]
+    },
+    {
+      "name": "Toolsets/OS",
+      "keywords": [ "MacOS", "Linux", "Git/GitHub", "IntelliJ Idea" ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "University of Hawaii at Manoa, Honolulu, HI",
+      "area": "Computer Engineering (expected Fall, 2023)",
+      "studyType": "B.S.",
+      "startDate": "2020-08-01",
+      "endDate": "Present",
+      "courses": [
+        "EE 205 - Object Oriented Programming",
+        "EE 211/213 - Basic Circuit Analysis I/II",
+        "EE 260 - Introduction to Digital Design",
+        "EE 361 - Digital Systems & Computer Design",
+        "EE 367 - Data Structures and Algorithms",
+        "ICS 314 - Software Engineering I"
+      ]
+    },
+    {
+      "institution": "Moanalua High School, Honolulu, HI",
+      "area": "Summa Cum Laude",
+      "studyType": "",
+      "startDate": "2016-08-01",
+      "endDate": "2020-05-22",
+      "courses": [
+        "AP Calculus BC",
+        "AP Computer Science AB",
+        "AP Statistics"
+      ]
+    }
+  ],
+  "work": [
+    {
+      "company": "UH Manoa Department of Electrical and Computer Engineering",
+      "position": "Teaching Assistant",
+      "website": "",
+      "startDate": "2022-06-06",
+      "endDate": "Present",
+      "summary": "Teaching laboratory sessions for various engineering courses",
+      "highlights": [
+        "Preparing, teaching, and demonstrating labs to reinforce students understanding of course material",
+        "Communicating with supervising professor on students progress, grading, and class schedule"
+      ]
+    },
+    {
+      "company": "UH Manoa College of Natural Sciences ",
+      "position": "Learning Emporium Math Tutor",
+      "website": "https://natsci.manoa.hawaii.edu/learningemporium/",
+      "startDate": "2021-01-10",
+      "endDate": "2022-08-12",
+      "summary": "Teaching college level math concepts",
+      "highlights": [
+        "Instruct, guide and assist students with mathematical concepts ranging from Trigonometry to Calculus IV",
+        "Assessing students needs and learning style to provide effective guidance"
+      ]
+    }
+  ],
+  "awards": [
+    {
+      "title": "Dean's List",
+      "date": "2020 - Present",
+      "awarder": "University of Hawaii at Manoa",
+      "summary": "Undergraduate students are awarded the Dean's List distinction if they earn a semester grade point average of 3.5 or higher based on 12 credits or more taken for a grade."
+    },
+    {
+      "title": "Manoa Academic Merit Scholarship",
+      "date": "2020 - Present",
+      "awarder": "University of Hawaii at Manoa",
+      "summary": "Scholarship awarded to first-time degree-seeking students who have a minimum high school GPA of 3.8."
+    }
+  ],
+  "references": [
+    {
+      "name": "Available upon request"
+    }
+  ]
+}
